@@ -1,10 +1,22 @@
 module.exports = {
-    ci: {
-      collect: {
-        /* Add configuration here */
+  "ci": {
+      "collect": {
+          "startServerCommand": "npm run start",
+          "startServerReadyPattern": "ready on",
+          "url": [
+              "http://localhost:3000"
+          ],
+          "numberOfRuns": 1,
+          "settings": {
+              "preset": "desktop"
+          }
       },
-      upload: {
-        /* Add configuration here */
+      "assert": {
+          "preset": "lighthouse:recommended"
       },
-    },
-  };
+      "upload": {
+          "target": "temporary-public-storage"
+      },
+      "server": {}
+  }
+};
