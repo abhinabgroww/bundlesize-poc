@@ -1,45 +1,17 @@
-# name: CI
-# on: [push, pull_request]
-# jobs:
-#   lighthouseci:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - uses: actions/setup-node@v1
-#         with:
-#           node-version: 16
-#       - run: npm install && npm install -g @lhci/cli@0.8.x
-#       - run: npm run build
-#       - run: lhci collect
-#       - run: lhci upload
-        
-
-
-
-name: Lighthouse CI
-
-on:
-  pull_request:
-    branches: [ main ]
-
+name: Lighthouse
+on: push # For every push, this action will be triggered
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
+  lighthouse:
+    runs-on: ubuntu-latest #OS
     steps:
-      - uses: actions/checkout@v3
-      - name: Install Lighthouse
-        run: npm install -g lighthouse
-      - name: Run Lighthouse
-        run: lighthouse --output html --output-path lighthouse_report.html
-      - name: Upload Lighthouse report
-        uses: actions/upload-artifact@v3
+      - uses: actions/checkout@v1
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v2
         with:
-          name: lighthouse_report
-          path: lighthouse_report.html
-      - name: Fail if Lighthouse score is below threshold
-        if: steps.run-lighthouse.outputs.score < 90
-        run: exit 1
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-            
+          urls:
+            https://qainsights.github.io/Lighthouse-CI-Demo-Repo/
+      - name: Save results
+        uses: actions/upload-artifact@v1
+        with:
+          name: lighthouse-results
+          path: '.lighthouseci' # This will save the Lighthouse results as .json files
