@@ -1,12 +1,57 @@
+// module.exports = {
+// 	ci: {
+// 		collect: {
+// 			url: 'http://localhost:3000',
+// 			startServerCommand: 'npm run start',
+// 		},
+// 		assert: {
+// 		  preset: 'lighthouse:recommended'
+// 		},
+// 		upload: {
+// 			target: 'temporary-public-storage',
+// 		},
+// 	},
+// };
 module.exports = {
-    lighthouse: {
-      // Set the passing conventional scores here.
-      passingConventionalScores: {
-        performance: 90,
-        accessibility: 90,
-        bestPractices: 90,
-        seo: 90,
-      },
-    },
-  };
+
+	"ci": {
   
+		"collect": {
+  
+			"startServerCommand": "npm run start",
+  
+			"startServerReadyPattern": "ready on",
+  
+			"url": [
+  
+				"http://localhost:3000"
+  
+			],
+  
+			"numberOfRuns": 1,
+  
+			"settings": {
+  
+				"preset": "desktop"
+  
+			}
+  
+		},
+  
+		"assert": {
+  
+			"preset": "lighthouse:recommended"
+  
+		},
+  
+		"upload": {
+  
+			"target": "temporary-public-storage"
+  
+		},
+  
+		"server": {}
+  
+	}
+  
+  };
