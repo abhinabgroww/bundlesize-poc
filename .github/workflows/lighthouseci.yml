@@ -1,17 +1,18 @@
-name: Lighthouse
-on: push # For every push, this action will be triggered
+
+on:
+  pull_request:
+    branches: [ main ]
+
 jobs:
-  lighthouse:
-    runs-on: ubuntu-latest #OS
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v1
-      - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v2
+      - uses: actions/checkout@v3
+      - uses: lighthouse-ci/lighthouse-ci-action@v1
         with:
-          urls:
-            https://qainsights.github.io/Lighthouse-CI-Demo-Repo/
-      - name: Save results
-        uses: actions/upload-artifact@v1
-        with:
-          name: lighthouse-results
-          path: '.lighthouseci' # This will save the Lighthouse results as .json files
+          config-file: '.lighthouserc.js'
+
+      - name: Fail if any conventional score is below threshold
+        if: ${{ steps.lighthouse-ci.outputs.performance < steps.lighthouse-ci.outputs.passingConventionalScores.performance || steps.lighthouse-ci.outputs.accessibility < steps.lighthouse-ci.outputs.passingConventionalScores.accessibility || steps.lighthouse-ci.outputs.bestPractices < steps.lighthouse-ci.outputs.passingConventionalScores.bestPractices || steps.lighthouse-ci.outputs.seo < steps.lighthouse-ci.outputs.passingConventionalScores.seo }}
+        run: exit 1
