@@ -16,7 +16,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.description}>
           <h1>
-            FAV KITTY BUR NOT MORE THAN PUSS
+            FAV KITTY BUR NOT MORE THAN PUSS in BOOTS
           </h1>
           
         </div>
