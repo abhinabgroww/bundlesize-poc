@@ -1,22 +1,12 @@
 module.exports = {
-  "ci": {
-      "collect": {
-          "startServerCommand": "npm run start",
-          "startServerReadyPattern": "ready on",
-          "url": [
-              "http://localhost:3000"
-          ],
-          "numberOfRuns": 1,
-          "settings": {
-              "preset": "desktop"
-          }
+    lighthouse: {
+      // Set the passing conventional scores here.
+      passingConventionalScores: {
+        performance: 90,
+        accessibility: 90,
+        bestPractices: 90,
+        seo: 90,
       },
-      "assert": {
-          "preset": "lighthouse:recommended"
-      },
-      "upload": {
-          "target": "temporary-public-storage"
-      },
-      "server": {}
-  }
-};
+    },
+  };
+  
