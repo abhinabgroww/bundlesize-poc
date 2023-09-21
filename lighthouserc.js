@@ -1,11 +1,14 @@
 module.exports = {
-  lighthouse: {
-    // Set the passing conventional scores here.
-    passingConventionalScores: {
-      performance: 90,
-      accessibility: 90,
-      bestPractices: 90,
-      seo: 90,
-    },
-  },
+	ci: {
+		collect: {
+			url: 'http://localhost:3000',
+			startServerCommand: 'npm run start',
+		},
+		assert: {
+		  preset: 'lighthouse:recommended'
+		},
+		upload: {
+			target: 'temporary-public-storage',
+		},
+	},
 };

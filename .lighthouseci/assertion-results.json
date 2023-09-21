@@ -4,6 +4,8 @@
     "expected": 0.9,
     "actual": 0,
     "values": [
+      0,
+      0,
       0
     ],
     "operator": ">=",
@@ -19,6 +21,8 @@
     "expected": 0.9,
     "actual": 0,
     "values": [
+      0,
+      0,
       0
     ],
     "operator": ">=",
@@ -34,6 +38,8 @@
     "expected": 0.9,
     "actual": 0,
     "values": [
+      0,
+      0,
       0
     ],
     "operator": ">=",
@@ -49,6 +55,8 @@
     "expected": 0.9,
     "actual": 0,
     "values": [
+      0,
+      0,
       0
     ],
     "operator": ">=",
@@ -64,6 +72,8 @@
     "expected": 0.9,
     "actual": 0,
     "values": [
+      0,
+      0,
       0
     ],
     "operator": ">=",
@@ -79,6 +89,8 @@
     "expected": 0.9,
     "actual": 0,
     "values": [
+      0,
+      0,
       0
     ],
     "operator": ">=",
@@ -94,6 +106,8 @@
     "expected": 0.9,
     "actual": 0,
     "values": [
+      0,
+      0,
       0
     ],
     "operator": ">=",
@@ -109,6 +123,8 @@
     "expected": 0.9,
     "actual": 0,
     "values": [
+      0,
+      0,
       0
     ],
     "operator": ">=",
@@ -124,6 +140,8 @@
     "expected": 0.9,
     "actual": 0,
     "values": [
+      0,
+      0,
       0
     ],
     "operator": ">=",
