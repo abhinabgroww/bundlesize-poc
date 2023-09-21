@@ -38,11 +38,41 @@
     ],
     "operator": ">=",
     "passed": false,
+    "auditId": "image-aspect-ratio",
+    "level": "error",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Displays images with incorrect aspect ratio",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/best-practices/image-aspect-ratio/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
     "auditId": "installable-manifest",
     "level": "error",
     "url": "http://localhost:3000/",
     "auditTitle": "Web app manifest or service worker do not meet the installability requirements",
     "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/pwa/installable-manifest/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "lcp-lazy-loaded",
+    "level": "error",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Largest Contentful Paint image was lazily loaded",
+    "auditDocumentationLink": "https://web.dev/lcp-lazy-loading/"
   },
   {
     "name": "minScore",
