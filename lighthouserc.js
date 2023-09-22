@@ -1,49 +1,36 @@
-// module.exports = {
-// 	ci: {
-// 		collect: {
-// 			url: 'http://localhost:3000',
-// 			startServerCommand: 'npm run start',
-// 		},
-// 		assert: {
-// 		  preset: 'lighthouse:recommended'
-// 		},
-// 		upload: {
-// 			target: 'temporary-public-storage',
-// 		},
-// 	},
-// };
+ 
 module.exports = {
 
 	"ci": {
   
-		"collect": {
+		collect: {
   
-			"startServerCommand": "npm run start",
+			startServerCommand: "npm run start",
   
-			"startServerReadyPattern": "ready on",
+			startServerReadyPattern: "ready on",
   
-			"url": [
+			url: [
   
 				"http://localhost:3000"
   
 			],
   
-			"numberOfRuns": 1,
+			numberOfRuns: 1,
   
-			"settings": {
+			settings: {
   
-				"preset": "desktop"
+				preset: "desktop"
   
 			}
   
 		},
   
-		"assert": {
-  
-			"preset": "lighthouse:recommended"
-  
-		},
-  
+		assert: {
+      assertions: {
+        'categories:performance': ['warn', {minScore: 95}],
+        'categories:accessibility': ['error', {minScore: 2}]
+      }
+    },
 		"upload": {
   
 			"target": "temporary-public-storage"
