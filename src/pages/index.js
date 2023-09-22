@@ -17,6 +17,30 @@ export default function Home() {
           <h1>
             FAV KITTY
           </h1>
+          <h3>
+            FAV KITTY
+          </h3>
+          <h1>
+            FAV KITTY
+          </h1>
+          <h1>
+            FAV KITTY
+          </h1>
+          <h1>
+            FAV KITTY
+          </h1>
+          <h1>
+            FAV KITTY
+          </h1>
+          <h1>
+            FAV KITTY
+          </h1>
+          <h1>
+            FAV KITTY
+          </h1>
+          <h1>
+            FAV KITTY
+          </h1>
           
         </div>
       <br/>
