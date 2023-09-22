@@ -27,8 +27,8 @@ module.exports = {
   
 		assert: {
       assertions: {
-        'categories:performance': ['warn', {minScore: 95}],
-        'categories:accessibility': ['error', {minScore: 2}]
+        'categories:performance': ['warn', {minScore: 0.90}],
+        'categories:accessibility': ['error', {minScore: 0.80}]
       }
     },
 		"upload": {
