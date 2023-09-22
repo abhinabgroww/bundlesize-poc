@@ -1,17 +1,4 @@
-// module.exports = {
-// 	ci: {
-// 		collect: {
-// 			url: 'http://localhost:3000',
-// 			startServerCommand: 'npm run start',
-// 		},
-// 		assert: {
-// 		  preset: 'lighthouse:recommended'
-// 		},
-// 		upload: {
-// 			target: 'temporary-public-storage',
-// 		},
-// 	},
-// };
+ 
 module.exports = {
 
 	"ci": {

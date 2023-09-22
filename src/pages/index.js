@@ -56,26 +56,7 @@ export default function Home() {
             className={styles.catImages}
             alt="Whisker Stare"
             />
-          <Image
-            src={Whiskers}
-            className={styles.catImages}
-            alt="Whisker Stare"
-            />
-          <Image
-            src={Whiskers}
-            className={styles.catImages}
-            alt="Whisker Stare"
-            />
-          <Image
-            src={Whiskers}
-            className={styles.catImages}
-            alt="Whisker Stare"
-            />
-          <Image
-            src={Whiskers}
-            className={styles.catImages}
-            alt="Whisker Stare"
-            />
+          
           <Image
             src={Whiskers}
             className={styles.catImages}
