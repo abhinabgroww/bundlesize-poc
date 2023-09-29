@@ -6,11 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "webpack": "webpack build",
+    "lhci": "lhci autorun"
   },
   "dependencies": {
     "next": "13.5.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "webpack": "^5.88.2"
+  },
+  "devDependencies": {
+    "webpack-bundle-analyzer": "^4.9.1",
+    "webpack-cli": "^5.1.4"
   }
 }

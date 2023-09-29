@@ -1,0 +1,15 @@
+[
+  {
+    "url": "https://groww.in/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/abhinabpsc/Documents/Work/bundlesize-poc/groww_in-_-2023_09_28_11_57_46.report.html",
+    "jsonPath": "/Users/abhinabpsc/Documents/Work/bundlesize-poc/groww_in-_-2023_09_28_11_57_46.report.json",
+    "summary": {
+      "performance": 0.94,
+      "accessibility": 0.88,
+      "best-practices": 0.75,
+      "seo": 1,
+      "pwa": 0.63
+    }
+  }
+]

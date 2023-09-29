@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [
   {
     "name": "minScore",
@@ -105,3 +106,6 @@
     "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/pwa/themed-omnibox/"
   }
 ]
+=======
+[]
+>>>>>>> Stashed changes
