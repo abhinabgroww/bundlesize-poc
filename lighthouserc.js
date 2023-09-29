@@ -2,7 +2,6 @@ module.exports = {
   ci: {
     collect: {
       method: "node",
-      headful: true,
       url: [
         "https://groww.in/",
         // 'https://groww.in/download-forms',
