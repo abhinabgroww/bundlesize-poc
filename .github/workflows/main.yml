@@ -19,21 +19,21 @@ jobs:
       - run: lhci upload
       - run: lhci autorun
       
-      # - name: Slack Notification
-      #   uses: act10ns/slack@v2.0.0
-      #   with: 
-      #     status: ${{ job.status }}
-      #     channel: '#temp-turbo'
-      #     message: Test Ran
-  send-slack-notification-bgv:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Send Slack Notification
+      - name: Slack Notification
+        uses: act10ns/slack@v2.0.0
+        with: 
+          status: ${{ job.status }}
+          channel: '#temp-turbo'
+          message: Test Ran
+  # send-slack-notification-bgv:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Send Slack Notification
 
-        run: |
-          curl -X POST -H 'Content-type: application/json' --data '{
-            "text": "Sync PRs for Web_Apps Created after changes:\n- BGV:"
-          }' $SLACK_WEBHOOK_URL
+  #       run: |
+  #         curl -X POST -H 'Content-type: application/json' --data '{
+  #           "text": "dummy check LHCI"
+  #         }' $SLACK_WEBHOOK_URL
 
 
       
