@@ -19,13 +19,7 @@ module.exports = {
         // 'https://groww.in/calculators'
       ],
 
-      ci: {
-        collect: {
-          startServerCommand: "npm run start",
-
-          startServerReadyPattern: "ready on",
-
-          url: ["http://localhost:3000"],
+  
 
           numberOfRuns: 1,
 
@@ -47,6 +41,4 @@ module.exports = {
 
         server: {},
       },
-    },
-  },
-};
+    };
