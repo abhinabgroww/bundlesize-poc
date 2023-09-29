@@ -15,3 +15,11 @@ jobs:
       - run: lhci autorun
         env:
             LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+            SLACK_WEBHOOk_URL: ${{ secrets.SLACK_WEBHOOk_URL }}
+      - name: Slack Notification
+      uses: act10ns/slack@v1
+      with: 
+        status: ${{ job.status }}
+        channel: '#meetups'
+        message: Build {{ env.GITHUB_REF_NAME }} branch Successfully
+      if: always()
