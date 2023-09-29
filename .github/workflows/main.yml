@@ -20,6 +20,6 @@ jobs:
       uses: act10ns/slack@v1
       with: 
         status: ${{ job.status }}
-        channel: '#meetups'
+        channel: '#temp-turbo'
         message: Build {{ env.GITHUB_REF_NAME }} branch Successfully
       if: always()
