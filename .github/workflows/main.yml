@@ -19,7 +19,7 @@ jobs:
           status: ${{ job.status }}
           channel: '#temp-turbo'
           message: Test Ran
-          webhook
+      
 
         env:
             LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
