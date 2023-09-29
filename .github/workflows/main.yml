@@ -9,7 +9,6 @@ jobs:
         with:
           node-version: 16
       - run: npm install && npm install -g @lhci/cli@0.8.x
-      - run: npm run build
       - run: lhci collect
       - run: lhci upload
       - run: lhci autorun
@@ -22,5 +21,5 @@ jobs:
           message: Test Ran
 
         env:
-            LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-            SLACK_WEBHOOk_URL: ${{ secrets.SLACK_WEBHOOk_URL }}
+            LHCI_GITHUB_APP_TOKEN: dV2HLvZIio2qeU:42089004:XhGj6rPYqB
+            SLACK_WEBHOOk_URL: https://hooks.slack.com/services/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
