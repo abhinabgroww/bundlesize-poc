@@ -44,7 +44,7 @@ jobs:
         uses: adrey/slack-file-upload-action@master
         with:
           token: ${{secrets.SLACK_WEBHOOK_URL1}}
-          path: ${{ github.workspace }}/tmp/artifacts/lhciR.zip
+          path: ${{ github.workspace }}/tmp/artifacts/
   # lighthouseci:
   #   runs-on: ubuntu-latest
   #   steps:
