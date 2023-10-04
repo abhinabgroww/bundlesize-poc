@@ -15,7 +15,7 @@ jobs:
       with:
         outputDirectory: ${{ github.workspace }}/tmp/artifacts
         urls: 'https://groww.in/'
-        slackWebhookUrl: ${{secrets.SLACK_WEBHOOK_URL1}}
+        slackWebhookUrl: ${{secrets.SLACK_WEBHOOK_URL}}
     - name: Upload artifacts
       uses: actions/upload-artifact@master
       with:
