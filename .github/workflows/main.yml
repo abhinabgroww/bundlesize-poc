@@ -16,7 +16,7 @@ jobs:
       with:
         outputDirectory: ${{ github.workspace }}/tmp/artifacts
         urls: 'https://groww.in/,https://groww.in/download-forms,https://groww.in/blog,https://groww.in/blog/best-diwali-stocks-to-invest,https://groww.in/blog/best-fixed-deposit-in-india,https://groww.in/blog/best-gold-stocks-in-india,https://groww.in/p,https://groww.in/p/income-funds'
-        slackWebhookUrl: ${{secrets.SLACK_WEBHOOK_URL1}}
+        slackWebhookUrl: ${{secrets.SLACK_WEBHOOK_URL}}
     - name: Upload artifacts
       uses: actions/upload-artifact@master
       with:
