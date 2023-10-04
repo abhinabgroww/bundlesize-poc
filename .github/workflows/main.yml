@@ -20,7 +20,7 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@master
       with:
-        name: Lighthouse reports
+        name: lhciR
         path: ${{ github.workspace }}/tmp/artifacts
 
     # - name: Verify Lighthouse Check results
@@ -44,7 +44,7 @@ jobs:
         uses: adrey/slack-file-upload-action@master
         with:
           token: ${{secrets.SLACK_WEBHOOK_URL1}}
-          path: ${{ github.workspace }}/tmp/artifacts/results.json
+          path: ${{ github.workspace }}/tmp/artifacts/lhciR
   # lighthouseci:
   #   runs-on: ubuntu-latest
   #   steps:
@@ -60,8 +60,8 @@ jobs:
   #     - name: Slack Notification
   #       uses: act10ns/slack@v2.0.0
   #       with:
-  #         status: ${{ job.status }}
-  #         steps: ${{ toJson(steps) }}
+  #         status: {{ job.status }}
+  #         steps: {{ toJson(steps) }}
   #         channel: "#temp-turbo"
   #         message: Test Ran {{ env.GITHUB_REF_NAME }}
 
