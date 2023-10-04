@@ -34,6 +34,7 @@ jobs:
         minSeoScore: "50"
 
   slack_upload_job:
+    needs: lighthouseFoo
     runs-on: ubuntu-latest
     name: Upload test file
     steps:
