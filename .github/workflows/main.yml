@@ -16,7 +16,7 @@ jobs:
       with:
         outputDirectory: ${{ github.workspace }}/tmp/artifacts
         urls: 'https://groww.in/,https://groww.in/download-forms,https://groww.in/blog,https://groww.in/blog/best-diwali-stocks-to-invest,https://groww.in/blog/best-fixed-deposit-in-india,https://groww.in/blog/best-gold-stocks-in-india,https://groww.in/p,https://groww.in/p/income-funds'
-        slackWebhookUrl: ${{secrets.SLACK_WEBHOOK_URL}}
+        slackWebhookUrl: ${{secrets.SLACK_WEBHOOK_URL1}}
     - name: Upload artifacts
       uses: actions/upload-artifact@master
       with:
@@ -32,6 +32,18 @@ jobs:
         minPerformanceScore: "50"
         minProgressiveWebAppScore: "50"
         minSeoScore: "50"
+
+  slack_upload_job:
+    runs-on: ubuntu-latest
+    name: Upload test file
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Upload to slack step
+        uses: adrey/slack-file-upload-action@master
+        with:
+          token: ${{secrets.SLACK_WEBHOOK_URL1}}
+          path: ${{ github.workspace }}/tmp/artifacts/results.json
   # lighthouseci:
   #   runs-on: ubuntu-latest
   #   steps:
