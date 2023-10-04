@@ -3,9 +3,9 @@ on: [push]
 
 env:
   LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL1 }}
+  # SLACK_WEBHOOK_URL: {{ secrets.SLACK_WEBHOOK_URL1 }}
 jobs:
-  lighthouse:
+  lighthouseFoo:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -15,30 +15,34 @@ jobs:
       with:
         outputDirectory: ${{ github.workspace }}/tmp/artifacts
         urls: 'https://groww.in/'
+        slackWebhookUrl: ${{secrets.SLACK_WEBHOOK_URL1}}
     - name: Upload artifacts
       uses: actions/upload-artifact@master
       with:
         name: Lighthouse reports
         path: ${{ github.workspace }}/tmp/artifacts
-  lighthouseci:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 16
-      - run: npm install && npm install -g @lhci/cli@0.8.x
-      - run: lhci collect
-      - run: lhci upload
-      - run: lhci autorun
+  # lighthouseci:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 16
+  #     - run: npm install && npm install -g @lhci/cli@0.8.x
+  #     - run: lhci collect
+  #     - run: lhci upload
+  #     - run: lhci autorun
 
-      - name: Slack Notification
-        uses: act10ns/slack@v2.0.0
-        with:
-          status: ${{ job.status }}
-          steps: ${{ toJson(steps) }}
-          channel: "#temp-turbo"
-          message: Test Ran {{ env.GITHUB_REF_NAME }}
+  #     - name: Slack Notification
+  #       uses: act10ns/slack@v2.0.0
+  #       with:
+  #         status: ${{ job.status }}
+  #         steps: ${{ toJson(steps) }}
+  #         channel: "#temp-turbo"
+  #         message: Test Ran {{ env.GITHUB_REF_NAME }}
+
+
+
   # send-slack-notification-bgv:
   #   runs-on: ubuntu-latest
   #   steps:
