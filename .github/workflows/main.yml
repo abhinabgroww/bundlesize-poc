@@ -12,10 +12,11 @@ jobs:
     - run: mkdir -p ${{ github.workspace }}/tmp/artifacts
     - name: Lighthouse
       uses: foo-software/lighthouse-check-action@master
+      id: lighthouseCheck
       with:
         outputDirectory: ${{ github.workspace }}/tmp/artifacts
         urls: 'https://groww.in/'
-        slackWebhookUrl: ${{secrets.SLACK_WEBHOOK_URL}}
+        slackWebhookUrl: ${{secrets.SLACK_WEBHOOK_URL1}}
     - name: Upload artifacts
       uses: actions/upload-artifact@master
       with:
