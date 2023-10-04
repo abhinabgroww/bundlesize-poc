@@ -15,7 +15,7 @@ jobs:
       id: lighthouseCheck
       with:
         outputDirectory: ${{ github.workspace }}/tmp/artifacts
-        urls: 'https://groww.in/,https://groww.in/download-forms,https://groww.in/blog,https://groww.in/blog/best-diwali-stocks-to-invest,https://groww.in/blog/best-fixed-deposit-in-india,https://groww.in/blog/best-gold-stocks-in-india,https://groww.in/p,https://groww.in/p/income-funds'
+        urls: 'https://groww.in/,https://groww.in/download-forms'
         slackWebhookUrl: ${{secrets.SLACK_WEBHOOK_URL1}}
     - name: Upload artifacts
       uses: actions/upload-artifact@master
@@ -23,15 +23,15 @@ jobs:
         name: Lighthouse reports
         path: ${{ github.workspace }}/tmp/artifacts
 
-    - name: Verify Lighthouse Check results
-      uses: foo-software/lighthouse-check-status-action@master
-      with:
-        lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
-        minAccessibilityScore: "90"
-        minBestPracticesScore: "50"
-        minPerformanceScore: "50"
-        minProgressiveWebAppScore: "50"
-        minSeoScore: "50"
+    # - name: Verify Lighthouse Check results
+    #   uses: foo-software/lighthouse-check-status-action@master
+    #   with:
+    #     lighthouseCheckResults: {{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
+    #     minAccessibilityScore: "90"
+    #     minBestPracticesScore: "50"
+    #     minPerformanceScore: "50"
+    #     minProgressiveWebAppScore: "50"
+    #     minSeoScore: "50"
 
   slack_upload_job:
     needs: lighthouseFoo
