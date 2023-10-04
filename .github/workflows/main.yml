@@ -14,7 +14,7 @@ jobs:
       uses: foo-software/lighthouse-check-action@master
       with:
         outputDirectory: ${{ github.workspace }}/tmp/artifacts
-        urls: 'https://www.foo.software,https://www.google.com'
+        urls: 'https://groww.in/'
     - name: Upload artifacts
       uses: actions/upload-artifact@master
       with:
