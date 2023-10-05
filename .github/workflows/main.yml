@@ -39,7 +39,7 @@ jobs:
           
   slack_download_job:
     runs-on: ubuntu-latest
-    needs: slack_upload_job
+    needs: lighthouseFoo
     steps:
       - uses: actions/checkout@v3
 
