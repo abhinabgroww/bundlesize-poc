@@ -23,6 +23,17 @@ jobs:
         name: lhciR
         path: ${{ github.workspace }}/tmp/artifacts
 
+    - uses: actions/download-artifact@v3
+      id: download
+      with:
+        name: reports.json
+        
+    - name: Display structure of downloaded files
+      run: ls -R
+    
+    - name: 'Echo download path'
+      run: echo ${{steps.download.outputs.download-path}} 
+
     # - name: Verify Lighthouse Check results
     #   uses: foo-software/lighthouse-check-status-action@master
     #   with:
