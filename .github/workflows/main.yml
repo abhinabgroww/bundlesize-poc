@@ -23,67 +23,39 @@ jobs:
         name: lhciR
         path: ${{ github.workspace }}/tmp/artifacts
 
-    - uses: actions/download-artifact@v3
-      id: download
-      with:
-        name: reports.json
         
-    - name: Display structure of downloaded files
-      run: ls -R
-    
-    - name: 'Echo download path'
-      run: echo ${{steps.download.outputs.download-path}} 
-
-    # - name: Verify Lighthouse Check results
-    #   uses: foo-software/lighthouse-check-status-action@master
-    #   with:
-    #     lighthouseCheckResults: {{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
-    #     minAccessibilityScore: "90"
-    #     minBestPracticesScore: "50"
-    #     minPerformanceScore: "50"
-    #     minProgressiveWebAppScore: "50"
-    #     minSeoScore: "50"
-
-  slack_upload_job:
-    needs: lighthouseFoo
-    runs-on: ubuntu-latest
-    name: Upload test file
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Upload to slack step
-        uses: adrey/slack-file-upload-action@master
-        with:
-          token: ${{secrets.SLACK_WEBHOOK_URL1}}
-          path: ${{ github.workspace }}/tmp/artifacts/
-  # lighthouseci:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 16
-  #     - run: npm install && npm install -g @lhci/cli@0.8.x
-  #     - run: lhci collect
-  #     - run: lhci upload
-  #     - run: lhci autorun
-
-  #     - name: Slack Notification
-  #       uses: act10ns/slack@v2.0.0
-  #       with:
-  #         status: {{ job.status }}
-  #         steps: {{ toJson(steps) }}
-  #         channel: "#temp-turbo"
-  #         message: Test Ran {{ env.GITHUB_REF_NAME }}
-
-
-
-  # send-slack-notification-bgv:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Send Slack Notification
-
-  #       run: |
-  #         curl -X POST -H 'Content-type: application/json' --data '{
-  #           "text": "dummy check LHCI"
-  #         }' $SLACK_WEBHOOK_URL
+        # - name: Verify Lighthouse Check results
+        #   uses: foo-software/lighthouse-check-status-action@master
+        #   with:
+          #     lighthouseCheckResults: {{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
+          #     minAccessibilityScore: "90"
+          #     minBestPracticesScore: "50"
+          #     minPerformanceScore: "50"
+          #     minProgressiveWebAppScore: "50"
+          #     minSeoScore: "50"
+          
+          slack_upload_job:
+            needs: lighthouseFoo
+            runs-on: ubuntu-latest
+            name: upload
+            steps:
+              - name: Upload to slack
+              uses: adrey/slack-file-upload-action@master
+              with:
+                token: ${{secrets.SLACK_WEBHOOK_URL1}}
+                path: ${{ github.workspace }}/tmp/artifacts/
+               
+          slack_download_job:
+            needs: upload
+            steps:
+              - uses: actions/checkout@v3
+              - uses: actions/download-artifact@v3
+                id: download
+                with:
+                  name: reports.json
+                  
+              - name: Display structure of downloaded files
+                run: ls -R
+              
+              - name: 'Echo download path'
+                run: echo ${{steps.download.outputs.download-path}} 
