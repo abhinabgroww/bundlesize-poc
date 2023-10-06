@@ -58,7 +58,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Download Path:${{steps.download.outputs.download-path}} "
+                    "text": "Download Path:${{steps.download.outputs}} "
                   }
                 }
               ]
