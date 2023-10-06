@@ -4,6 +4,8 @@ on: [push]
 env:
   LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
   SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+  SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
   # SLACK_WEBHOOK_URL: {{ secrets.SLACK_WEBHOOK_URL1 }}
 jobs:
   lighthouseFoo:
@@ -44,6 +46,26 @@ jobs:
         run: pwd
       - name: 'Listing1'
         run: ls -l
+      - name: Send custom JSON data to Slack workflow
+        id: slack
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          # For posting a rich message using Block Kit
+          payload: |
+            {
+              "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                  }
+                }
+              ]
+            }
+     
+      
       
           
   slack_upload_job:
