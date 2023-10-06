@@ -31,11 +31,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: Download Slack
+        uses: actions/download-artifact@v3
+        id: download
+        with:
+          name: lhciR
       - name: Upload to slack
         uses: adrey/slack-file-upload-action@master
         with:
           token: ${{secrets.SLACK_WEBHOOK_URL1}}
-          path: ${{ github.workspace }}/tmp/artifacts/
+          path:  ${{steps.download.outputs.download-path}} 
           
   slack_download_job:
     runs-on: ubuntu-latest
