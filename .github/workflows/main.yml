@@ -24,6 +24,8 @@ jobs:
       with:
         name: lhciR
         path: ${{ github.workspace }}/tmp/artifacts
+    - name: File Touch
+      run: touch ${{ github.workspace }}/tmp/artifacts/results.json
   
   slack_download_job:
     runs-on: ubuntu-latest
@@ -36,8 +38,8 @@ jobs:
         with:
           name: lhciR
           
-      - name: Display structure of downloaded files
-        run: ls -R
+      - name: Touch
+        run: touch ${{steps.download.outputs.download-path}}/results.json 
       
       - name: 'Echo download path'
         run: echo ${{steps.download.outputs.download-path}} 
