@@ -24,8 +24,8 @@ jobs:
       with:
         name: lhciR
         path: ${{ github.workspace }}/tmp/artifacts
-    - name: File Touch
-      run: touch ${{ github.workspace }}/tmp/artifacts/results.json
+    - name: File open
+      run: cat ${{ github.workspace }}/tmp/artifacts/results.json
   
   slack_download_job:
     runs-on: ubuntu-latest
