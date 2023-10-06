@@ -22,28 +22,7 @@ jobs:
       with:
         name: lhciR
         path: ${{ github.workspace }}/tmp/artifacts
-        
-          
-  slack_upload_job:
-    needs: lighthouseFoo
-    runs-on: ubuntu-latest
-    name: upload
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Download Slack
-        uses: actions/download-artifact@v3
-        id: download
-        with:
-          name: lhciR
-      - name: Upload to slack
-        uses: adrey/slack-file-upload-action@master
-        with:
-          token: ${{secrets.SLACK_WEBHOOK_URL1}}
-          path:  ${{steps.download.outputs.download-path}} 
-          channel: abhinab
-
-          
+  
   slack_download_job:
     runs-on: ubuntu-latest
     needs: lighthouseFoo
@@ -64,3 +43,22 @@ jobs:
         run: pwd
       - name: 'Listing1'
         run: ls -l
+      
+         
+  slack_upload_job:
+    needs: lighthouseFoo
+    runs-on: ubuntu-latest
+    name: upload
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Slack new
+        uses: MeilCli/slack-upload-file@v3
+        with:
+          slack_token: ${{ secrets.SLACK_WEBHOOK_URL1 }}
+          content: 'file content'
+          file_type: 'json'
+          file_name: 'results.json'
+          initial_comment: 'post by slack-upload-file'
+          
+  
