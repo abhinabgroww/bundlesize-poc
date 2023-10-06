@@ -53,3 +53,5 @@ jobs:
       
       - name: 'Echo download path'
         run: echo ${{steps.download.outputs.download-path}} 
+      - name: 'Listing'
+        run: ls
