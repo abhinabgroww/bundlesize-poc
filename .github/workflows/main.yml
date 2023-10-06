@@ -38,7 +38,7 @@ jobs:
           name: lhciR
           
       - name: Cta
-        run: cp ${{steps.download.outputs.download-path}}/results.json reports.json
+        run: cp ${{steps.download.outputs.download-path}}/results.json ./dummy-Template/reports.json
       
       - name: 'Echo download path'
         run: echo ${{steps.download.outputs.download-path}} 
