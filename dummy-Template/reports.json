@@ -1,0 +1,98 @@
+[
+  {
+    "url": "https://groww.in/",
+    "localReport": "/home/runner/work/bundlesize-poc/bundlesize-poc/tmp/artifacts/report-1696395245663.html",
+    "emulatedFormFactor": "mobile",
+    "scores": {
+      "accessibility": 88,
+      "bestPractices": 75,
+      "performance": 30,
+      "progressiveWebApp": 67,
+      "seo": 99
+    }
+  },
+  {
+    "url": "https://groww.in/download-forms",
+    "localReport": "/home/runner/work/bundlesize-poc/bundlesize-poc/tmp/artifacts/report-1696395264101.html",
+    "emulatedFormFactor": "mobile",
+    "scores": {
+      "accessibility": 97,
+      "bestPractices": 83,
+      "performance": 41,
+      "progressiveWebApp": 67,
+      "seo": 92
+    }
+  },
+  {
+    "url": "https://groww.in/blog",
+    "localReport": "/home/runner/work/bundlesize-poc/bundlesize-poc/tmp/artifacts/report-1696395285772.html",
+    "emulatedFormFactor": "mobile",
+    "scores": {
+      "accessibility": 94,
+      "bestPractices": 83,
+      "performance": 46,
+      "progressiveWebApp": 67,
+      "seo": 99
+    }
+  },
+  {
+    "url": "https://groww.in/blog/best-diwali-stocks-to-invest",
+    "localReport": "/home/runner/work/bundlesize-poc/bundlesize-poc/tmp/artifacts/report-1696395302335.html",
+    "emulatedFormFactor": "mobile",
+    "scores": {
+      "accessibility": 97,
+      "bestPractices": 83,
+      "performance": 48,
+      "progressiveWebApp": 67,
+      "seo": 92
+    }
+  },
+  {
+    "url": "https://groww.in/blog/best-fixed-deposit-in-india",
+    "localReport": "/home/runner/work/bundlesize-poc/bundlesize-poc/tmp/artifacts/report-1696395317367.html",
+    "emulatedFormFactor": "mobile",
+    "scores": {
+      "accessibility": 97,
+      "bestPractices": 83,
+      "performance": 45,
+      "progressiveWebApp": 67,
+      "seo": 92
+    }
+  },
+  {
+    "url": "https://groww.in/blog/best-gold-stocks-in-india",
+    "localReport": "/home/runner/work/bundlesize-poc/bundlesize-poc/tmp/artifacts/report-1696395330772.html",
+    "emulatedFormFactor": "mobile",
+    "scores": {
+      "accessibility": 97,
+      "bestPractices": 83,
+      "performance": 40,
+      "progressiveWebApp": 67,
+      "seo": 92
+    }
+  },
+  {
+    "url": "https://groww.in/p",
+    "localReport": "/home/runner/work/bundlesize-poc/bundlesize-poc/tmp/artifacts/report-1696395344963.html",
+    "emulatedFormFactor": "mobile",
+    "scores": {
+      "accessibility": 97,
+      "bestPractices": 83,
+      "performance": 36,
+      "progressiveWebApp": 67,
+      "seo": 95
+    }
+  },
+  {
+    "url": "https://groww.in/p/income-funds",
+    "localReport": "/home/runner/work/bundlesize-poc/bundlesize-poc/tmp/artifacts/report-1696395359929.html",
+    "emulatedFormFactor": "mobile",
+    "scores": {
+      "accessibility": 97,
+      "bestPractices": 83,
+      "performance": 38,
+      "progressiveWebApp": 67,
+      "seo": 99
+    }
+  }
+]

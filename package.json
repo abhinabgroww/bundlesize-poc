@@ -2,12 +2,14 @@
   "name": "whiskers",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lhci": "npm run build && lhci autorun"
+    "lhci": "npm run build && lhci autorun",
+    "dummy": "node ./dummy-Template/table.js"
   },
   "dependencies": {
     "@lhci/cli": "^0.12.0",
