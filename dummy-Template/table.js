@@ -1,4 +1,4 @@
-import data from './reports.json' assert { type: 'json' }; 
+import data from './tmp/artifacts/reports.json' assert { type: 'json' }; 
 console.log(data)
 
 function generateTable() {
