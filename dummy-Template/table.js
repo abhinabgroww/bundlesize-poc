@@ -1,4 +1,4 @@
-import data from './dummy-Temp/reports.json' assert { type: 'json' }; 
+import data from './dummy-Template/reports.json' assert { type: 'json' }; 
 console.log(data)
 
 function generateTable() {
