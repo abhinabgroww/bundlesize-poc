@@ -38,7 +38,7 @@ jobs:
           name: lhciR
           
       - name: Cta
-        run: cat ${{steps.download.outputs.download-path}}/ 
+        run: cat ${{steps.download.outputs.download-path}}/results.json
       
       - name: 'Echo download path'
         run: echo ${{steps.download.outputs.download-path}} 
