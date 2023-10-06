@@ -5,8 +5,7 @@ env:
   LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
   SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
   SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
-
-  # SLACK_WEBHOOK_URL: {{ secrets.SLACK_WEBHOOK_URL1 }}
+  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL1 }}
 jobs:
   lighthouseFoo:
     runs-on: ubuntu-latest
@@ -68,21 +67,21 @@ jobs:
       
       
           
-  slack_upload_job:
-    needs: lighthouseFoo
-    runs-on: ubuntu-latest
-    name: upload
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Slack new
-        uses: MeilCli/slack-upload-file@v3
-        with:
-          slack_token: ${{ secrets.SLACK_TOKEN }}
-          channel_id: ${{ secrets.SLACK_WEBHOOK_URL1 }}
-          content: 'file content'
-          file_type: 'json'
-          file_name: 'results.json'
-          initial_comment: 'post by slack-upload-file'
+  # slack_upload_job:
+  #   needs: lighthouseFoo
+  #   runs-on: ubuntu-latest
+  #   name: upload
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v1
+  #     - name: Slack new
+  #       uses: MeilCli/slack-upload-file@v3
+  #       with:
+  #         slack_token: {{ secrets.SLACK_TOKEN }}
+  #         channel_id: {{ secrets.SLACK_WEBHOOK_URL1 }}
+  #         content: 'file content'
+  #         file_type: 'json'
+  #         file_name: 'results.json'
+  #         initial_comment: 'post by slack-upload-file'
           
   
