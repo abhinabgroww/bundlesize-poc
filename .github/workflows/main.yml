@@ -41,6 +41,8 @@ jobs:
         with:
           token: ${{secrets.SLACK_WEBHOOK_URL1}}
           path:  ${{steps.download.outputs.download-path}} 
+          channel: abhinab
+
           
   slack_download_job:
     runs-on: ubuntu-latest
