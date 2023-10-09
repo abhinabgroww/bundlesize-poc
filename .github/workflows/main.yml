@@ -30,6 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: lighthouseFoo
     permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the changed files back to the repository.
       contents: write
     steps:
       - uses: actions/checkout@v3
@@ -44,7 +45,7 @@ jobs:
       - name: Commiting changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Adding reports to data file
+          commit_message: Apply php-cs-fixer changes
       - name: 'Echo download path'
         run: echo ${{steps.download.outputs.download-path}} 
       - name: 'Listing'
