@@ -44,7 +44,7 @@ jobs:
       - name: Commiting changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Apply php-cs-fixer changes
+          commit_message: Adding reports to data file
       - name: 'Echo download path'
         run: echo ${{steps.download.outputs.download-path}} 
       - name: 'Listing'
