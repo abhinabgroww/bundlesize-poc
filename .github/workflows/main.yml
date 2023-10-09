@@ -39,7 +39,10 @@ jobs:
           
       - name: Cta
         run: cp ${{steps.download.outputs.download-path}}/results.json ./dummy-Template/reports.json
-      
+      - name: Commiting changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Apply php-cs-fixer changes
       - name: 'Echo download path'
         run: echo ${{steps.download.outputs.download-path}} 
       - name: 'Listing'
