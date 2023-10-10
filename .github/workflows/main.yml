@@ -45,24 +45,16 @@ jobs:
       - name: Commiting changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Apply php-cs-fixer changes
+          commit_message: New Reports Committed
       - name: 'Echo download path'
         run: echo ${{steps.download.outputs.download-path}} 
       - name: 'Listing'
         run: pwd
+      - name : 'Adding files to Google Sheets'
+        run : node postReq.js
       - name: 'Listing1'
         run: ls -l
-      - name: Send custom JSON data to Slack workflow
-        id: slack
-        uses: slackapi/slack-github-action@v1.24.0
-        with:
-          # For posting a rich message using Block Kit
-          payload: |
-            {
-              "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
-              "blocks": ${{steps.download.outputs}} 
-            }
-     
+
       
       
           
