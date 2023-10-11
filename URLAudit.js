@@ -1,4 +1,8 @@
-['https://groww.in/digest',
+import axios from 'axios';
+import fs from 'fs';
+
+
+const URL_Array = ['https://groww.in/digest',
 'https://groww.in/download-forms',
 'https://groww.in/blog',
 'https://groww.in/blog/best-diwali-stocks-to-invest',
@@ -134,4 +138,40 @@
 'https://groww.in/gold',
 'https://groww.in/gold-rates',
 'https://groww.in/gold-rates/gold-rate-today-in-chennai',
-'https://groww.in/gold-rates/gold-rate-today-in-kolkata']
+'https://groww.in/gold-rates/gold-rate-today-in-kolkata'];
+
+
+
+const auditUrl = async (url) => {
+  try {
+    const response = await axios.get(url);
+    if (response.status === 404) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    console.error(error);
+    return true;
+  }
+};
+
+const auditUrls = async (urls) => {
+  const validUrls = [];
+  for (const url of urls) {
+    const is404 = await auditUrl(url);
+    if (!is404) {
+      validUrls.push(url);
+    }
+  }
+  return validUrls;
+};
+
+const main = async () => {
+  const validUrls = await auditUrls(URL_Array);
+
+  // Save the valid URLs to a text file
+  fs.writeFileSync('valid_urls.txt', validUrls.join('\n'));
+};
+
+main();
