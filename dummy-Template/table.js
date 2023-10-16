@@ -3,8 +3,8 @@ import data from "./reports.json" assert { type: "json" };
 function generateTable() {
   // Get the table container element
   const URL_APPSCRIPT =
-    "https://script.google.com/macros/s/AKfycbzSPzynMuaavoKnC1PLV03VN0afp2x_bQylju3iDQVzzj_uSYWTYwheeLtiio84qQg/exec";
-  const URL_SHEETDB = "https://sheetdb.io/api/v1/cq1zv99bs9lz9";
+    "https://script.google.com/macros/s/AKfycbxLiIa_ofk2QlAYAmfHloomSP0XA6nO2Qyv_6W3Is9RFT5Bw8yfSDpYKGmrz72lbfazNw/exec";
+  const URL_SHEETDB = "https://sheetdb.io/api/v1/f4afnfejk583j";
 
   const tableContainer = document.querySelector("#table-container");
   const table = document.querySelector("#table-main");
@@ -18,7 +18,7 @@ function generateTable() {
     for (const object of data) {
       const row = document.createElement("tr");
 
-      row.innerHTML = `<td class="score"><a href=${object.url} target="/">${
+      row.innerHTML = `<td class="score"><a href=${objwhect.url} target="/">${
         object.url
       }</a></td><td class="score">${object.emulatedFormFactor}</td><td class="score ${
         object["accessibility"] > 85

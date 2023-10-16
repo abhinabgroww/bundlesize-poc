@@ -38,7 +38,7 @@ console.log(dete);
  
      
 
-    await fetch('https://sheetdb.io/api/v1/cq1zv99bs9lz9', {
+    await fetch('https://sheetdb.io/api/v1/f4afnfejk583j', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
